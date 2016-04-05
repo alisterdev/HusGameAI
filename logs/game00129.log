@@ -1,0 +1,19 @@
+# Server version 0.08 running on wpa059047.wireless.mcgill.ca:8123
+# Game ID: 129
+# Board class: hus.HusBoard
+# Timeout: 2000
+# First Move Timeout: 30000
+# Date: Mon Apr 04 10:32:44 EDT 2016
+# Player 1: Player-0, 'RandomHusPlayer', running on wpa059047.wireless.mcgill.ca
+# Player 2: Player-1, '260629223', running on wpa059047.wireless.mcgill.ca
+START Player-0 RandomHusPlayer
+START Player-1 260629223
+PIT 0 15
+PIT 1 23
+PIT 0 12
+PIT 1 22
+PIT 0 19
+PIT 1 20
+PIT 0 5
+GAMEOVER DISCONNECTION Player-0 WINNER 1
+# Game ended: Mon Apr 04 10:32:44 EDT 2016

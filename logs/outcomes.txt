@@ -1,0 +1,156 @@
+1,RandomHusPlayer,Human,GAMEOVER USER CANCEL UNDECIDED,NOBODY,61,game00001.log,USER CANCEL
+2,260629223,RandomHusPlayer,1,RandomHusPlayer,118,game00002.log,
+3,RandomHusPlayer,Human,GAMEOVER USER CANCEL UNDECIDED,NOBODY,3,game00003.log,USER CANCEL
+4,RandomHusPlayer,Human,GAMEOVER USER CANCEL UNDECIDED,NOBODY,1,game00004.log,USER CANCEL
+5,Human,RandomHusPlayer,GAMEOVER USER CANCEL UNDECIDED,NOBODY,1,game00005.log,USER CANCEL
+6,RandomHusPlayer,Human,GAMEOVER USER CANCEL UNDECIDED,NOBODY,1,game00006.log,USER CANCEL
+8,RandomHusPlayer,Human,GAMEOVER USER CANCEL UNDECIDED,NOBODY,66,game00008.log,USER CANCEL
+9,RandomHusPlayer,Human,GAMEOVER USER CANCEL UNDECIDED,NOBODY,66,game00009.log,USER CANCEL
+10,RandomHusPlayer,Human,GAMEOVER USER CANCEL UNDECIDED,NOBODY,2,game00010.log,USER CANCEL
+11,RandomHusPlayer,260629223,0,RandomHusPlayer,63,game00011.log,
+12,RandomHusPlayer,260629223,0,RandomHusPlayer,34,game00012.log,
+13,RandomHusPlayer,Human,GAMEOVER USER CANCEL UNDECIDED,NOBODY,1,game00013.log,USER CANCEL
+14,RandomHusPlayer,Human,GAMEOVER USER CANCEL UNDECIDED,NOBODY,1,game00014.log,USER CANCEL
+16,RandomHusPlayer,Human,GAMEOVER USER CANCEL UNDECIDED,NOBODY,1,game00016.log,USER CANCEL
+17,RandomHusPlayer,260629223,0,RandomHusPlayer,40,game00017.log,
+18,RandomHusPlayer,260629223,0,RandomHusPlayer,206,game00018.log,
+19,RandomHusPlayer,260629223,0,RandomHusPlayer,59,game00019.log,
+20,RandomHusPlayer,260629223,0,RandomHusPlayer,298,game00020.log,
+21,RandomHusPlayer,260629223,0,RandomHusPlayer,129,game00021.log,
+23,RandomHusPlayer,260629223,1,260629223,35,game00023.log,
+24,RandomHusPlayer,260629223,0,RandomHusPlayer,58,game00024.log,
+25,RandomHusPlayer,260629223,0,RandomHusPlayer,292,game00025.log,
+26,RandomHusPlayer,260629223,0,RandomHusPlayer,93,game00026.log,
+27,RandomHusPlayer,260629223,0,RandomHusPlayer,135,game00027.log,
+28,RandomHusPlayer,260629223,1,260629223,96,game00028.log,
+29,RandomHusPlayer,260629223,0,RandomHusPlayer,108,game00029.log,
+30,RandomHusPlayer,260629223,1,260629223,43,game00030.log,
+31,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00031.log,ILLEGAL MOVE: Player 1 plays pit 0
+32,RandomHusPlayer,260629223,0,RandomHusPlayer,85,game00032.log,
+33,RandomHusPlayer,260629223,1,260629223,268,game00033.log,
+34,RandomHusPlayer,260629223,0,RandomHusPlayer,40,game00034.log,
+35,RandomHusPlayer,260629223,0,RandomHusPlayer,22,game00035.log,
+36,RandomHusPlayer,260629223,0,RandomHusPlayer,60,game00036.log,
+38,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00038.log,DISCONNECTION Player-1
+40,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00040.log,DISCONNECTION Player-1
+41,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00041.log,DISCONNECTION Player-1
+42,RandomHusPlayer,260629223,1,260629223,405,game00042.log,
+43,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00043.log,DISCONNECTION Player-1
+44,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00044.log,DISCONNECTION Player-1
+45,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00045.log,DISCONNECTION Player-1
+46,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00046.log,DISCONNECTION Player-1
+47,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00047.log,ILLEGAL MOVE: Player 1 plays pit 0
+48,RandomHusPlayer,260629223,0,RandomHusPlayer,73,game00048.log,
+49,RandomHusPlayer,260629223,0,RandomHusPlayer,150,game00049.log,
+50,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00050.log,DISCONNECTION Player-1
+51,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00051.log,DISCONNECTION Player-1
+52,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00052.log,DISCONNECTION Player-1
+53,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00053.log,DISCONNECTION Player-1
+54,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00054.log,DISCONNECTION Player-1
+55,RandomHusPlayer,Human,0,RandomHusPlayer,1,game00055.log,DISCONNECTION Player-1
+56,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00056.log,DISCONNECTION Player-1
+57,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00057.log,DISCONNECTION Player-1
+58,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00058.log,DISCONNECTION Player-1
+59,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00059.log,DISCONNECTION Player-1
+60,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00060.log,DISCONNECTION Player-1
+61,260629223,RandomHusPlayer,0,260629223,1,game00061.log,DISCONNECTION Player-1
+62,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00062.log,DISCONNECTION Player-1
+63,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00063.log,DISCONNECTION Player-1
+64,260629223,RandomHusPlayer,0,260629223,1,game00064.log,DISCONNECTION Player-1
+65,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00065.log,DISCONNECTION Player-1
+66,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00066.log,DISCONNECTION Player-1
+67,RandomHusPlayer,260629223,1,260629223,1,game00067.log,DISCONNECTION Player-0
+68,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00068.log,DISCONNECTION Player-1
+69,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00069.log,DISCONNECTION Player-1
+70,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00070.log,DISCONNECTION Player-1
+71,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00071.log,DISCONNECTION Player-1
+72,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00072.log,DISCONNECTION Player-1
+73,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00073.log,DISCONNECTION Player-1
+74,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00074.log,DISCONNECTION Player-1
+75,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00075.log,DISCONNECTION Player-1
+76,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00076.log,DISCONNECTION Player-1
+77,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00077.log,DISCONNECTION Player-1
+78,260629223,RandomHusPlayer,1,RandomHusPlayer,45,game00078.log,
+79,RandomHusPlayer,260629223,0,RandomHusPlayer,57,game00079.log,
+80,RandomHusPlayer,260629223,0,RandomHusPlayer,56,game00080.log,
+81,RandomHusPlayer,260629223,0,RandomHusPlayer,26,game00081.log,
+82,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00082.log,DISCONNECTION Player-1
+83,260629223,RandomHusPlayer,0,260629223,1,game00083.log,DISCONNECTION Player-1
+84,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00084.log,DISCONNECTION Player-1
+85,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00085.log,DISCONNECTION Player-1
+86,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00086.log,DISCONNECTION Player-1
+87,260629223,RandomHusPlayer,0,260629223,1,game00087.log,DISCONNECTION Player-1
+88,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00088.log,DISCONNECTION Player-1
+89,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00089.log,DISCONNECTION Player-1
+90,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00090.log,DISCONNECTION Player-1
+91,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00091.log,DISCONNECTION Player-1
+92,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00092.log,DISCONNECTION Player-1
+93,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00093.log,DISCONNECTION Player-1
+95,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00095.log,DISCONNECTION Player-1
+96,RandomHusPlayer,260629223,0,RandomHusPlayer,1,game00096.log,DISCONNECTION Player-1
+97,RandomHusPlayer,260629223,1,260629223,175,game00097.log,
+98,RandomHusPlayer,260629223,0,RandomHusPlayer,61,game00098.log,
+99,RandomHusPlayer,260629223,0,RandomHusPlayer,68,game00099.log,
+100,RandomHusPlayer,260629223,0,RandomHusPlayer,115,game00100.log,
+102,RandomHusPlayer,260629223,1,260629223,3,game00102.log,DISCONNECTION Player-0
+104,RandomHusPlayer,260629223,0,RandomHusPlayer,7,game00104.log,DISCONNECTION Player-1
+105,RandomHusPlayer,260629223,1,260629223,3,game00105.log,DISCONNECTION Player-0
+106,260629223,RandomHusPlayer,1,RandomHusPlayer,3,game00106.log,DISCONNECTION Player-0
+111,RandomHusPlayer,260629223,1,260629223,3,game00111.log,DISCONNECTION Player-0
+112,RandomHusPlayer,260629223,1,260629223,3,game00112.log,DISCONNECTION Player-0
+113,RandomHusPlayer,260629223,1,260629223,3,game00113.log,DISCONNECTION Player-0
+114,RandomHusPlayer,Human,1,Human,3,game00114.log,DISCONNECTION Player-0
+115,260629223,RandomHusPlayer,1,RandomHusPlayer,16,game00115.log,
+116,260629223,RandomHusPlayer,1,RandomHusPlayer,31,game00116.log,
+117,260629223,RandomHusPlayer,0,260629223,57,game00117.log,
+118,260629223,RandomHusPlayer,1,RandomHusPlayer,70,game00118.log,
+119,RandomHusPlayer,260629223,0,RandomHusPlayer,155,game00119.log,
+120,RandomHusPlayer,260629223,1,260629223,3,game00120.log,DISCONNECTION Player-0
+121,RandomHusPlayer,260629223,1,260629223,3,game00121.log,DISCONNECTION Player-0
+122,RandomHusPlayer,260629223,1,260629223,3,game00122.log,DISCONNECTION Player-0
+123,RandomHusPlayer,260629223,1,260629223,3,game00123.log,DISCONNECTION Player-0
+127,RandomHusPlayer,260629223,1,260629223,3,game00127.log,DISCONNECTION Player-0
+128,RandomHusPlayer,260629223,1,260629223,3,game00128.log,DISCONNECTION Player-0
+129,RandomHusPlayer,260629223,1,260629223,3,game00129.log,DISCONNECTION Player-0
+130,RandomHusPlayer,260629223,1,260629223,3,game00130.log,DISCONNECTION Player-0
+131,RandomHusPlayer,260629223,1,260629223,3,game00131.log,DISCONNECTION Player-0
+132,260629223,RandomHusPlayer,1,RandomHusPlayer,210,game00132.log,
+133,RandomHusPlayer,260629223,1,260629223,45,game00133.log,
+134,RandomHusPlayer,260629223,0,RandomHusPlayer,22,game00134.log,
+135,RandomHusPlayer,260629223,1,260629223,170,game00135.log,
+136,RandomHusPlayer,260629223,0,RandomHusPlayer,51,game00136.log,
+137,RandomHusPlayer,260629223,1,260629223,115,game00137.log,
+138,RandomHusPlayer,260629223,0,RandomHusPlayer,20,game00138.log,ILLEGAL MOVE: Player 1 plays pit 15
+139,RandomHusPlayer,260629223,1,260629223,47,game00139.log,
+140,RandomHusPlayer,260629223,0,RandomHusPlayer,76,game00140.log,
+141,RandomHusPlayer,260629223,1,260629223,12,game00141.log,
+142,RandomHusPlayer,260629223,1,260629223,9,game00142.log,
+143,RandomHusPlayer,260629223,1,260629223,19,game00143.log,
+144,RandomHusPlayer,260629223,1,260629223,17,game00144.log,
+145,260629223,RandomHusPlayer,0,260629223,17,game00145.log,
+146,260629223,RandomHusPlayer,0,260629223,14,game00146.log,
+147,260629223,RandomHusPlayer,0,260629223,13,game00147.log,
+148,260629223,RandomHusPlayer,0,260629223,7,game00148.log,
+149,260629223,RandomHusPlayer,0,260629223,16,game00149.log,
+150,260629223,RandomHusPlayer,0,260629223,19,game00150.log,
+151,RandomHusPlayer,260629223,1,260629223,16,game00151.log,
+152,260629223,RandomHusPlayer,0,260629223,8,game00152.log,
+153,RandomHusPlayer,260629223,1,260629223,16,game00153.log,
+154,260629223,RandomHusPlayer,0,260629223,22,game00154.log,
+155,RandomHusPlayer,260629223,1,260629223,16,game00155.log,
+156,260629223,RandomHusPlayer,0,260629223,15,game00156.log,
+157,RandomHusPlayer,260629223,1,260629223,18,game00157.log,
+158,260629223,RandomHusPlayer,0,260629223,16,game00158.log,
+159,RandomHusPlayer,260629223,1,260629223,15,game00159.log,
+160,260629223,RandomHusPlayer,0,260629223,11,game00160.log,
+161,RandomHusPlayer,260629223,1,260629223,16,game00161.log,
+162,260629223,RandomHusPlayer,0,260629223,19,game00162.log,
+163,RandomHusPlayer,260629223,1,260629223,16,game00163.log,
+164,260629223,RandomHusPlayer,0,260629223,10,game00164.log,
+165,RandomHusPlayer,260629223,1,260629223,9,game00165.log,
+166,260629223,RandomHusPlayer,0,260629223,13,game00166.log,
+167,RandomHusPlayer,260629223,1,260629223,8,game00167.log,
+168,260629223,RandomHusPlayer,0,260629223,16,game00168.log,
+169,RandomHusPlayer,260629223,1,260629223,17,game00169.log,
+170,260629223,RandomHusPlayer,0,260629223,16,game00170.log,
+171,RandomHusPlayer,260629223,1,260629223,9,game00171.log,

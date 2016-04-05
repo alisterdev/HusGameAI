@@ -1,0 +1,12 @@
+# Server version 0.08 running on alistermbp:8123
+# Game ID: 37
+# Board class: hus.HusBoard
+# Timeout: 2000
+# First Move Timeout: 30000
+# Date: Sat Apr 02 19:14:10 EDT 2016
+# Player 1: Player-0, 'RandomHusPlayer', running on alistermbp
+# Player 2: Player-1, '260629223', running on alistermbp
+START Player-0 RandomHusPlayer
+START Player-1 260629223
+PIT 0 7
+GAMEOVER DISCONNECTION Player-1 WINNER 0

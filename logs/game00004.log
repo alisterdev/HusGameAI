@@ -1,0 +1,15 @@
+# Server version 0.08 running on alistermbp:8123
+# Game ID: 4
+# Board class: hus.HusBoard
+# Timeout: 2000
+# First Move Timeout: 30000
+# Date: Fri Apr 01 22:30:45 EDT 2016
+# Player 1: Player-0, 'RandomHusPlayer', running on alistermbp
+# Player 2: Player-1, 'Human', running on alistermbp
+START Player-0 RandomHusPlayer
+START Player-1 Human
+PIT 0 12
+PIT 1 23
+PIT 0 15
+GAMEOVER USER CANCEL UNDECIDED
+# Game ended: Fri Apr 01 22:34:33 EDT 2016

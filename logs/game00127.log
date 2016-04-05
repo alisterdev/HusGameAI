@@ -1,0 +1,19 @@
+# Server version 0.08 running on localhost:8123
+# Game ID: 127
+# Board class: hus.HusBoard
+# Timeout: 2000
+# First Move Timeout: 30000
+# Date: Mon Apr 04 10:01:37 EDT 2016
+# Player 1: Player-0, 'RandomHusPlayer', running on localhost
+# Player 2: Player-1, '260629223', running on localhost
+START Player-0 RandomHusPlayer
+START Player-1 260629223
+PIT 0 8
+PIT 1 23
+PIT 0 9
+PIT 1 22
+PIT 0 20
+PIT 1 25
+PIT 0 3
+GAMEOVER DISCONNECTION Player-0 WINNER 1
+# Game ended: Mon Apr 04 10:01:38 EDT 2016
