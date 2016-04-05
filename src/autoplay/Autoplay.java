@@ -26,7 +26,6 @@ public class Autoplay
         int n_games;
         try{
             n_games = Integer.parseInt(args[0]);
-            n_games = 10;
             if(n_games < 1) {
                 throw new Exception();
             }
