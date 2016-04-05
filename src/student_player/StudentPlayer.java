@@ -28,6 +28,8 @@ public class StudentPlayer extends HusPlayer {
 	 */
 	public HusMove chooseMove(HusBoardState board_state) {
 
+		long startTime = System.nanoTime();  
+		
 		ArrayList<HusMove> moves = board_state.getLegalMoves();		
 		int bestValue = Integer.MIN_VALUE;
 		Node bestNode = new Node(moves.get(0), bestValue);
@@ -38,7 +40,7 @@ public class StudentPlayer extends HusPlayer {
 			HusBoardState boardStateCopy = (HusBoardState) board_state.clone();
 			boardStateCopy.move(moves.get(i));			
 		
-			int result = minimax(boardStateCopy, 3, moves.get(i));
+			int result = minimax(boardStateCopy, 5, moves.get(i), Integer.MIN_VALUE, Integer.MAX_VALUE);
 						
 			if (result > bestValue) {
 				bestValue = result;
@@ -49,10 +51,13 @@ public class StudentPlayer extends HusPlayer {
 			//System.out.println("Move: " + moves.get(i).getPit() + " | Score: " + result);
 		}
 		
+		long estimatedTime = System.nanoTime() - startTime;
+		System.out.println("Time per move " + board_state.getTurnNumber() + ": " + estimatedTime  / 1000000000.0);
+		
 		return bestNode.getMove();
 	}
 	
-	private int minimax(HusBoardState boardState, int depth, HusMove lastMove) {
+	private int minimax(HusBoardState boardState, int depth, HusMove lastMove, int min, int max) {
 			
 		ArrayList<HusMove> moves = boardState.getLegalMoves();		
 		
@@ -70,8 +75,9 @@ public class StudentPlayer extends HusPlayer {
 			for (int i = 0; i < moves.size(); i++) {					
 				HusBoardState boardStateCopy = (HusBoardState) boardState.clone();
 				boardStateCopy.move(moves.get(i));						
-				int result = minimax(boardStateCopy, depth - 1, moves.get(i));
+				int result = minimax(boardStateCopy, depth - 1, moves.get(i), bestValue, max);
 				bestValue = Math.max(bestValue, result);
+				if (bestValue > max) return max;
 			}
 			//System.out.println("My Turn | Best value: " + bestNode.getScore() + " | Pit: " + bestNode.getMove().getPit());
 			return bestValue;
@@ -82,8 +88,9 @@ public class StudentPlayer extends HusPlayer {
 			for (int i = 0; i < moves.size(); i++) {					
 				HusBoardState boardStateCopy = (HusBoardState) boardState.clone();
 				boardStateCopy.move(moves.get(i));				
-				int result = minimax(boardStateCopy, depth - 1, moves.get(i));
-				bestValue = Math.min(bestValue, result);										
+				int result = minimax(boardStateCopy, depth - 1, moves.get(i), min, bestValue);
+				bestValue = Math.min(bestValue, result);	
+				if (bestValue < min) return min;
 			}
 			//System.out.println("Opp Turn | Best value: " + bestNode.getScore());
 			return bestValue;		
