@@ -68,14 +68,32 @@ public class StudentPlayer extends HusPlayer {
 		setCurrentBoardState(board_state);
 		int bestValue = Integer.MIN_VALUE;
 		int depth = 5;
+				
+//		if (board_state.getTurnNumber() > 5) {
+//			depth = 6;
+//		}
 					
 		ArrayList<HusMove> moves = board_state.getLegalMoves();
 		MoveTuple bestMove = new MoveTuple(moves.get(0), bestValue);
-			
+				
+		
 		// Loop through currently available moves
 		for (int i = 0; i < moves.size(); i++) {
 			HusBoardState boardStateCopy = (HusBoardState) board_state.clone();
 			boardStateCopy.move(moves.get(i));
+			
+			if (board_state.getTurnNumber() > 5) {
+				int moveCount = boardStateCopy.getLegalMoves().size();
+				if (moveCount < 15) {
+					depth = 6;
+				} else if (moveCount < 10) {
+					depth = 7;
+				}
+				//System.out.println(moveCount);
+			} else {
+				depth = 5;
+			}
+			
 			int result = minimax(boardStateCopy, depth, Integer.MIN_VALUE, Integer.MAX_VALUE);
 
 			if (result > bestValue) {
@@ -90,7 +108,7 @@ public class StudentPlayer extends HusPlayer {
 			}
 		}
 
-		System.out.println("Move duration: " + getMoveDurationTime());
+		//System.out.println("Move duration: " + getMoveDurationTime());
 		return bestMove.getMove();
 	}
 
@@ -168,11 +186,11 @@ public class StudentPlayer extends HusPlayer {
 	
 		boolean isTimedOut = false;
 		
-		if (getCurrentBoardState().getTurnNumber() == 0 && getMoveDurationTime() > 29.99) {
+		if (getCurrentBoardState().getTurnNumber() == 0 && getMoveDurationTime() > 29.8) {
 			isTimedOut = true;
 		}
 
-		if (getCurrentBoardState().getTurnNumber() > 0 && getMoveDurationTime() > 1.99) {
+		if (getCurrentBoardState().getTurnNumber() > 0 && getMoveDurationTime() > 1.8) {
 			isTimedOut = true;
 		}
 				
