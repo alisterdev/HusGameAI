@@ -6,146 +6,212 @@ import hus.HusMove;
 
 import java.util.ArrayList;
 
-import student_player.mytools.MyTools;
-
-/** A Hus player submitted by a student. */
+/**
+ * A StudentPlayer class with an intelligent game move selection, based on
+ * minimax algorithm.
+ * 
+ * @author Alex Ilea (260629223)
+ * @date 2016/04/07
+ *
+ */
 public class StudentPlayer extends HusPlayer {
+
+	private HusBoardState currentBoardState;
+	private double moveStartTime;
+	private double moveDurationTime;
 	
 	/**
-	 * You must modify this constructor to return your student number. This is
-	 * important, because this is what the code that runs the competition uses
-	 * to associate you with your agent. The constructor should do nothing else.
+	 * Public constructor.
+	 * Initializes player with my student ID
 	 */
 	public StudentPlayer() {
 		super("260629223");
 	}
+	
+	public HusBoardState getCurrentBoardState() {
+		return currentBoardState;
+	}
+
+	public void setCurrentBoardState(HusBoardState currentBoardState) {
+		this.currentBoardState = currentBoardState;
+	}
+
+	public double getMoveStartTime() {
+		return moveStartTime;
+	}
+
+	public void setMoveStartTime(double moveStartTime) {
+		this.moveStartTime = moveStartTime;
+	}
 
 	/**
-	 * This is the primary method that you need to implement. The
-	 * ``board_state`` object contains the current state of the game, which your
-	 * agent can use to make decisions. See the class hus.RandomHusPlayer for
-	 * another example agent.
+	 * Returns the duration time of the current move in seconds
+	 * @return double moveDurationTime
+	 */
+	public double getMoveDurationTime() {
+		this.moveDurationTime = (System.nanoTime() - moveStartTime) / 1000000000.0;
+		return moveDurationTime;
+	}
+
+	public void setMoveDurationTime(double moveDurationTime) {
+		this.moveDurationTime = moveDurationTime;
+	}
+
+	/**
+	 * Custom implementation of chooseMove method
+	 * 
+	 * @see hus.HusPlayer#chooseMove(hus.HusBoardState)
 	 */
 	public HusMove chooseMove(HusBoardState board_state) {
 
-		long startTime = System.nanoTime();  
-		
-		ArrayList<HusMove> moves = board_state.getLegalMoves();		
+		setMoveStartTime(System.nanoTime());
+		setCurrentBoardState(board_state);
 		int bestValue = Integer.MIN_VALUE;
-		Node bestNode = new Node(moves.get(0), bestValue);
-		
-		// Loop through currently available moves
-		for (int i = 0; i < moves.size(); i++) {	
+		int depth = 5;
+					
+		ArrayList<HusMove> moves = board_state.getLegalMoves();
+		MoveTuple bestMove = new MoveTuple(moves.get(0), bestValue);
 			
+		// Loop through currently available moves
+		for (int i = 0; i < moves.size(); i++) {
 			HusBoardState boardStateCopy = (HusBoardState) board_state.clone();
-			boardStateCopy.move(moves.get(i));			
-		
-			int result = minimax(boardStateCopy, 5, moves.get(i), Integer.MIN_VALUE, Integer.MAX_VALUE);
-						
+			boardStateCopy.move(moves.get(i));
+			int result = minimax(boardStateCopy, depth, Integer.MIN_VALUE, Integer.MAX_VALUE);
+
 			if (result > bestValue) {
 				bestValue = result;
-				bestNode.setMove(moves.get(i));
-				bestNode.setScore(result);
+				bestMove.setMove(moves.get(i));
+				bestMove.setScore(result);
 			}
 			
-			//System.out.println("Move: " + moves.get(i).getPit() + " | Score: " + result);
+			if (isTimedOut()) {
+				System.out.println("Timed out at " + moveDurationTime + "s. Choosing the best move so far.");
+				return bestMove.getMove();
+			}
 		}
-		
-		long estimatedTime = System.nanoTime() - startTime;
-		System.out.println("Time per move " + board_state.getTurnNumber() + ": " + estimatedTime  / 1000000000.0);
-		
-		return bestNode.getMove();
+
+		System.out.println("Move duration: " + getMoveDurationTime());
+		return bestMove.getMove();
 	}
-	
-	private int minimax(HusBoardState boardState, int depth, HusMove lastMove, int min, int max) {
-			
-		ArrayList<HusMove> moves = boardState.getLegalMoves();		
-		
-		// If depth is 0, evaluate my board state
-		if (depth == 0 || moves.size() == 1) {
-			int bestValue = seedCount(boardState.getPits()[player_id]);			
-			//System.out.println("Depth: 0 | Pit: " + lastMove.getPit() + " | Best value: " + bestValue);
-			return bestValue;
-		}
-				
-		// IF MY TURN
-		if (boardState.getTurnPlayer() == player_id) {
-								
-			int bestValue = Integer.MIN_VALUE;
-			for (int i = 0; i < moves.size(); i++) {					
-				HusBoardState boardStateCopy = (HusBoardState) boardState.clone();
-				boardStateCopy.move(moves.get(i));						
-				int result = minimax(boardStateCopy, depth - 1, moves.get(i), bestValue, max);
-				bestValue = Math.max(bestValue, result);
-				if (bestValue > max) return max;
-			}
-			//System.out.println("My Turn | Best value: " + bestNode.getScore() + " | Pit: " + bestNode.getMove().getPit());
-			return bestValue;
-			
-		} else {
-			
-			int bestValue = Integer.MAX_VALUE;					
-			for (int i = 0; i < moves.size(); i++) {					
-				HusBoardState boardStateCopy = (HusBoardState) boardState.clone();
-				boardStateCopy.move(moves.get(i));				
-				int result = minimax(boardStateCopy, depth - 1, moves.get(i), min, bestValue);
-				bestValue = Math.min(bestValue, result);	
-				if (bestValue < min) return min;
-			}
-			//System.out.println("Opp Turn | Best value: " + bestNode.getScore());
-			return bestValue;		
-			
-		}			
-	}
-	
-	
+
 	/**
-	 * Simple evaluation function based on the current number of seeds
-	 * in players pits
+	 * Implementation of minimax search algorithm using alpha-beta pruning
 	 * 
-	 * @param int [] playerPits
-	 * @return int seedCount 
+	 * Search is performed up to the given depth. In case where search takes more
+	 * time than allowed by the game rules, algorithm breaks from recursion and
+	 * returns the best value at the current depth.
+	 * 
+	 * @param boardState - state of the game board
+	 * @param depth - depth of minimax search
+	 * @param alpha - minimizer
+	 * @param beta - maximizer
+	 * @return bestValue - best score for a given board state
+	 */
+	private int minimax(HusBoardState boardState, int depth, int alpha, int beta) {
+		
+		ArrayList<HusMove> moves = boardState.getLegalMoves();
+		
+		if (depth == 0 || moves.size() == 0 || isTimedOut()) {
+			int bestValue = seedCount(boardState.getPits()[player_id]);
+			return bestValue;
+		}
+
+		if (boardState.getTurnPlayer() == player_id) {
+			int bestValue = Integer.MIN_VALUE;
+			for (int i = 0; i < moves.size(); i++) {
+				HusBoardState boardStateCopy = (HusBoardState) boardState.clone();
+				boardStateCopy.move(moves.get(i));
+				int result = minimax(boardStateCopy, depth - 1, bestValue, beta);
+				bestValue = Math.max(bestValue, result);				
+				if (bestValue > beta) { return beta; }
+			}
+			return bestValue;
+		} else {
+			int bestValue = Integer.MAX_VALUE;
+			for (int i = 0; i < moves.size(); i++) {
+				HusBoardState boardStateCopy = (HusBoardState) boardState.clone();
+				boardStateCopy.move(moves.get(i));
+				int result = minimax(boardStateCopy, depth - 1, alpha, bestValue);
+				bestValue = Math.min(bestValue, result);				
+				if (bestValue < alpha) { return alpha; }
+			}			
+			return bestValue;
+		}
+	}
+
+	/**
+	 * Simple evaluation function used in minimax search algorithm. Evaluates
+	 * the terminal node based on the current number of seeds in players pits.
+	 * 
+	 * @param playerPits
+	 * @return seedCount - total number of seed in players pits
 	 */
 	private int seedCount(int[] playerPits) {
-		
+
 		int seedCount = 0;
-		
+
 		for (int pitPos = 0; pitPos < playerPits.length; pitPos++) {
 			seedCount += playerPits[pitPos];
 		}
-				
+
 		return seedCount;
 	}
 	
-}
-
-class Node {
+	/**
+	 * Helper function used to determine if current move is approaching the
+	 * maximum time allowed by the game. For first move, allow up to 30 seconds,
+	 * for subsequent moves allow up to 2 seconds.
+	 * 
+	 * @return - isTimedOut
+	 */
+	private boolean isTimedOut() {
 	
-	private HusMove move;
-	private int score;
+		boolean isTimedOut = false;
 		
-	public Node(HusMove move, int score) {
-		this.move = move;
-		this.score = score;
+		if (getCurrentBoardState().getTurnNumber() == 0 && getMoveDurationTime() > 29.99) {
+			isTimedOut = true;
+		}
+
+		if (getCurrentBoardState().getTurnNumber() > 0 && getMoveDurationTime() > 1.99) {
+			isTimedOut = true;
+		}
+				
+		return isTimedOut;		
 	}
 
-	public HusMove getMove() {
-		return move;
+	/**
+	 * Defines a tuple that stores a HusMove and its corresponding score as
+	 * calculated by evaluation function.
+	 * 
+	 * @author Alex Ilea (260629223)
+	 * @date 2016/04/07
+	 */
+	class MoveTuple {
+
+		private HusMove move;
+		private int score;
+
+		public MoveTuple(HusMove move, int score) {
+			this.move = move;
+			this.score = score;
+		}
+
+		public HusMove getMove() {
+			return move;
+		}
+
+		public void setMove(HusMove move) {
+			this.move = move;
+		}
+
+		public int getScore() {
+			return score;
+		}
+
+		public void setScore(int score) {
+			this.score = score;
+		}
+
 	}
 
-	public void setMove(HusMove move) {
-		this.move = move;
-	}
-
-	public int getScore() {
-		return score;
-	}
-
-	public void setScore(int score) {
-		this.score = score;
-	}
-	
-	
-	
 }
-
