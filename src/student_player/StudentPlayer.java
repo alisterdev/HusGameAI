@@ -66,34 +66,18 @@ public class StudentPlayer extends HusPlayer {
 
 		setMoveStartTime(System.nanoTime());
 		setCurrentBoardState(board_state);
-		int bestValue = Integer.MIN_VALUE;
-		int depth = 5;
-				
-//		if (board_state.getTurnNumber() > 5) {
-//			depth = 6;
-//		}
-					
+		int bestValue = Integer.MIN_VALUE;		
+									
 		ArrayList<HusMove> moves = board_state.getLegalMoves();
 		MoveTuple bestMove = new MoveTuple(moves.get(0), bestValue);
-				
-		
-		// Loop through currently available moves
+						
+		// Search through currently available moves
 		for (int i = 0; i < moves.size(); i++) {
 			HusBoardState boardStateCopy = (HusBoardState) board_state.clone();
 			boardStateCopy.move(moves.get(i));
 			
-			if (board_state.getTurnNumber() > 5) {
-				int moveCount = boardStateCopy.getLegalMoves().size();
-				if (moveCount < 15) {
-					depth = 6;
-				} else if (moveCount < 10) {
-					depth = 7;
-				}
-				//System.out.println(moveCount);
-			} else {
-				depth = 5;
-			}
-			
+			int moveCount = boardStateCopy.getLegalMoves().size();
+			int depth = getDepth(board_state, moveCount);
 			int result = minimax(boardStateCopy, depth, Integer.MIN_VALUE, Integer.MAX_VALUE);
 
 			if (result > bestValue) {
@@ -103,12 +87,10 @@ public class StudentPlayer extends HusPlayer {
 			}
 			
 			if (isTimedOut()) {
-				System.out.println("Timed out at " + moveDurationTime + "s. Choosing the best move so far.");
 				return bestMove.getMove();
 			}
 		}
-
-		//System.out.println("Move duration: " + getMoveDurationTime());
+		
 		return bestMove.getMove();
 	}
 
@@ -168,11 +150,37 @@ public class StudentPlayer extends HusPlayer {
 
 		int seedCount = 0;
 
-		for (int pitPos = 0; pitPos < playerPits.length; pitPos++) {
-			seedCount += playerPits[pitPos];
+		for (int i = 0; i < playerPits.length; i++) {
+			seedCount += playerPits[i];
 		}
 
 		return seedCount;
+	}
+	
+	/**
+	 * Helper function to estimate depth that could be explored 
+	 * within the given time limit. 
+	 * 
+	 * @param boardState - state of the board
+	 * @param moveCount - number of potential moves to explore 
+	 * @return depth - depth of the search
+	 */
+	private int getDepth(HusBoardState boardState, int moveCount) {
+		
+		int depth = 5;
+		
+		// increase depth only after first 5 turns to avoid timeouts
+		if (boardState.getTurnNumber() > 5) {
+			if (moveCount < 15) {
+				depth = 6;
+			} else if (moveCount < 10) {
+				depth = 7;
+			} else {
+				depth = 5;
+			}
+		}
+		
+		return depth;
 	}
 	
 	/**
@@ -186,11 +194,11 @@ public class StudentPlayer extends HusPlayer {
 	
 		boolean isTimedOut = false;
 		
-		if (getCurrentBoardState().getTurnNumber() == 0 && getMoveDurationTime() > 29.8) {
+		if (getCurrentBoardState().getTurnNumber() == 0 && getMoveDurationTime() > 29.98) {
 			isTimedOut = true;
 		}
 
-		if (getCurrentBoardState().getTurnNumber() > 0 && getMoveDurationTime() > 1.8) {
+		if (getCurrentBoardState().getTurnNumber() > 0 && getMoveDurationTime() > 1.98) {
 			isTimedOut = true;
 		}
 				
