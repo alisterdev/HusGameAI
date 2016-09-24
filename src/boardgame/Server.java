@@ -78,7 +78,7 @@ public class Server implements Runnable {
     private int port = DEFAULT_PORT;
     private int timeout = DEFAULT_TIMEOUT;
     private int first_move_timeout = FIRST_MOVE_TIMEOUT;
-    private boolean quiet = false;
+    private boolean quiet = true;
 
     // Files, sockets and threads
     final private ClientHandler players[];
